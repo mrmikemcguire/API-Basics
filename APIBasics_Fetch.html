@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>API Call</title>
+</head>
+
+<body>
+    <h1>My First API Call</h1>
+    <h2 id="output"></h2>
+
+    <script type="text/javascript">
+        
+        window.onload = function () {
+            fetch('https://swapi.co/api/films').then(response => {
+                return response.json();
+            }).then(data => {
+                var SWData = data.results;
+                var html = '';
+                for(var x in SWData)
+                    {
+                    html += SWData[x].title + '<br>';
+                    }
+                console.log(SWData);
+                document.getElementById("output").innerHTML = html;
+            }).catch(err => {
+                console.log("Oops!");
+            });
+            
+        };
+    </script>
+
+</body>
+</html>

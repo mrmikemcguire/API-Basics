@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>XHR Basics</title>
+</head>
+
+<body>
+    <h1>XHR</h1>
+    <h2 id="output"></h2>
+    <button id="loadNew">LOAD</button>
+
+    <script type="text/javascript">
+        var url = 'https://randomuser.me/api/';
+        var output = document.getElementById('output');
+        var buttonClick = document.getElementById('loadNew')
+        buttonClick.addEventListener('click', function() {
+            loadAjax();
+        })
+
+        function loadAjax() {
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function() {
+                //console.log('state changed',request.readyState, request.status)
+                if (request.readyState == 4 && request.status == 200) {
+                    json = JSON.parse(request.responseText);
+                    var data = json.results[0];
+                    var message = '<h2>'+data.name.first + '  ' + data.name.last + 
+                        '</h2><img src="'+data.picture.large +'">'
+
+                    output.innerHTML = message;
+                    }
+                };       
+            request.open('GET', url, true)
+            request.send();
+        }
+    </script>
+
+</body>
+</html>
