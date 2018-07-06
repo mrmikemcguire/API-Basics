@@ -1,12 +1,26 @@
 <html>
     <head>
         <title>JSON Server</title>
+            <style>
+                .btn {
+                    border: 1px solid black;
+                    padding: 10px;
+                    display: inline-block;
+                    width: 100px;
+                    text-align: center;
+                }
+            </style>
     </head>
 
     <body>
         <h1>JSON Server AJAX Testing</h1>
+        <div id="message"></div>
+        <div id="load1" class="btn">Load 1</div>
         <script>
-        
+            var load1 = document.querySelector('#load1');
+            load1.addEventListener('click', function() {
+                console.log('It works')
+            })
         </script>
     </body>
 </html>
