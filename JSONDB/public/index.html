@@ -18,9 +18,22 @@
         <div id="load1" class="btn">Load 1</div>
         <script>
             var load1 = document.querySelector('#load1');
+            var message = document.getElementById('message');
             load1.addEventListener('click', function() {
-                console.log('It works')
+                makeRequest('http://localhost:3000/posts', 'GET', {})
             })
+
+        function makeRequest(url, requestType, data) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState ==4) {
+                    message.innerHTML = xhr.response;
+                    console.log(JSON.parse(xhr.response))
+                }
+            }
+            xhr.open(requestType, url, true);
+            xhr.send();
+        }
         </script>
     </body>
 </html>
