@@ -16,11 +16,17 @@
         <h1>JSON Server AJAX Testing</h1>
         <div id="message"></div>
         <div id="load1" class="btn">Load 1</div>
+        <div id="send1" class="btn">Send 1</div>
+
         <script>
             var load1 = document.querySelector('#load1');
+            var send1 = document.querySelector('#send1');
             var message = document.getElementById('message');
             load1.addEventListener('click', function() {
                 makeRequest('http://localhost:3000/posts', 'GET', {})
+            })
+            load1.addEventListener('click', function() {
+                makeRequest('http://localhost:3000/posts', 'POST', 'first=Dirk&last=McSteel&company=ACME&another=HelloWorld')
             })
 
         function makeRequest(url, requestType, data) {
@@ -32,6 +38,7 @@
                 }
             }
             xhr.open(requestType, url, true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
             xhr.send();
         }
         </script>
