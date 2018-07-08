@@ -7,7 +7,10 @@
       "company": "Mullen High School"
     },
     {
-      "id": 2
+      "id": 2,
+      "first": "Frustrated",
+      "last": "Fred",
+      "company": "Amishville"
     },
     {
       "id": 3
@@ -25,7 +28,7 @@
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
+      "body": "Why won't this work?",
       "postId": 1
     }
   ],
