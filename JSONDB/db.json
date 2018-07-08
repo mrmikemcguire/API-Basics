@@ -4,6 +4,12 @@
       "id": 1,
       "title": "Mr. Debug",
       "author": "Brandon Sanderson"
+    },
+    {
+      "first": "Mike",
+      "last": "McGuire",
+      "company": "J.K. Mullen High School",
+      "id": 2
     }
   ],
   "comments": [
@@ -27,6 +33,11 @@
     },
     {
       "id": 5
+    },
+    {
+      "postId": "1",
+      "body": "My last attempt to add a comment...",
+      "id": 6
     }
   ],
   "profile": {
