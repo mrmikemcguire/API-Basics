@@ -2,43 +2,34 @@
   "posts": [
     {
       "id": 1,
-      "first": "Mike",
-      "last": "McGuire",
-      "company": "Mullen High School"
-    },
-    {
-      "id": 2,
-      "first": "Frustrated",
-      "last": "Fred",
-      "company": "Amishville"
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
+      "title": "Mr. Debug",
+      "author": "Brandon Sanderson"
     }
   ],
   "comments": [
     {
       "id": 1,
-      "body": "Why won't this work?",
+      "body": "some comment",
       "postId": 1
     },
     {
-      "id": 2
+      "id": 2,
+      "body": "some new comment",
+      "postId": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4,
+      "body": "hand-typed",
+      "postId": 4
+    },
+    {
+      "id": 5
     }
   ],
   "profile": {
     "name": "typicode"
-  },
-  "test": {
-    "whatever": "Hello World"
   }
 }

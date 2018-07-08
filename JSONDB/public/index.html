@@ -31,14 +31,14 @@
     <div id="next" class="btn">Next</div>
     <div id="output"></div>
     <form id="myForm">
-        <input type="text" name="first" value="Dirk">
-        <input type="text" name="last" value="McSteel"><br>
+        <input type="text" name="first" value="Jason">
+        <input type="text" name="last" value="Tester">
         <input type="text" name="company" value="ACME">
         <input type="submit" value="Send Data"> </form>
     <br>
     <input type="text" name="search">
     <button class='btn' id="search">Search</button>
-    <br><br>
+    <br>
     <textarea id="comments"></textarea>
     <button class="btn" id="addComment">Add Comment</button>
     <br>
@@ -69,9 +69,9 @@
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
                     var myObj = JSON.parse(xhr.response);
-                    //console.log(myObj)
+                    console.log(myObj)
                     for(var key in myObj[0]){
-                        //console.log(key,myObj[0][key])
+                         console.log(key,myObj[0][key])
                         output.innerHTML  += '<b>'+key+'</b> : '+myObj[0][key] + '<br>';
                     }
                    output.innerHTML = xhr.response;
