@@ -1,4 +1,4 @@
-//<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -12,19 +12,21 @@
     <script>
         $(function() {
             $('#loadData').click(function(){
-                var url = 'https://spreadsheets.google.com/feeds/list/2PACX-1vQz0PHE6SynGiO9fJ5jMV3bC7eJBMJT3mxhCLJzhQ9mvG7hQkVP25gC0hcZha6PZ1T_cXJjS5o3Fwwh/od6/public/values?alt=json'
+                var url = 'https://spreadsheets.google.com/feeds/list/2PACX-1vQz0PHE6SynGiO9fJ5jMV3bC7eJBMJT3mxhCLJzhQ9mvG7hQkVP25gC0hcZha6PZ1T_cXJjS5o3Fwwh/1/public/values?alt=json'
                 $.getJSON(url,function(data){
-                    console.log(data);
-                    // console.log(data.feed.entry);
-                    //  var html = '<h3>Google Sheet Data</h3>';
-                    // $.each(data.feed.entry,function(key,val){
-                    //     console.log(val.gsx$company.$t)
-                    //     console.log(val.gsx$first.$t)
-                    //     console.log(val.gsx$last.$t)
-                    //     console.log(val.gsx$group.$t)
-                    //     html += '<div>'+ val.gsx$first.$t + ' '+ val.gsx$last.$t + ' '+ val.gsx$company.$t + ' ' + val.gsx$group.$t + '</div>'
-                    // })
-                    // $('#output').html(html);
+                    console.log(data.feed.entry);
+                     var html = '<h3>Google Sheet Data</h3>';
+                    $.each(data.feed.entry,function(key,val){
+                        console.log(val.gsx$group.$t)
+                        console.log(val.gsx$first.$t)
+                        console.log(val.gsx$last.$t)
+                        console.log(val.gsx$company.$t)
+                        html += '<div>'+ val.gsx$first.$t + ' '+ val.gsx$last.$t + ' '+ val.gsx$company.$t + ' ' + val.gsx$group.$t + '</div>'
+                    })
+                    $('#output').html(html);
                 })       
             })   
         });
+    </script>
+</body>
+</html>
