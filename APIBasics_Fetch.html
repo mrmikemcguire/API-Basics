@@ -9,9 +9,7 @@
 <body>
     <h1>My First API Call</h1>
     <h2 id="output"></h2>
-
-    <script type="text/javascript">
-        
+    <script type="text/javascript">  
         window.onload = function () {
             fetch('https://swapi.co/api/films').then(response => {
                 return response.json();
@@ -25,11 +23,9 @@
                 console.log(SWData);
                 document.getElementById("output").innerHTML = html;
             }).catch(err => {
-                console.log("Oops!");
-            });
-            
+                console.log("Alas, you are too weak in the Force to access that data...");
+            });        
         };
     </script>
-
 </body>
 </html>
