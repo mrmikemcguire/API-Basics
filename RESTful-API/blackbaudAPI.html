@@ -13,19 +13,28 @@
         access.addEventListener('click',loadData)
         
         function loadData(){
-            var ajax = new XMLHttpRequest();
-            ajax.onreadystatechange = function(){
-                if(this.readyState==4){
-                    if(this.status==200){
-                        var json = JSON.parse(this.responseText);
-                        console.log(json)
-                        var html = '<div><img src="'+json.icon_url+'">'+json.value+'</div>';
-                        document.querySelector('#output').innerHTML = html;
-                    }
-                }
-            }
-            ajax.open('GET','https://api.chucknorris.io/jokes/random',true);
-            ajax.send();
+            var data = null;
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("GET", "https://mullenhigh.myschoolapp.com/api/authentication/login/?username=mmcguire&password=Codewizard4184%21%0A");
+xhr.setRequestHeader("User-Agent", "PostmanRuntime/7.15.0");
+xhr.setRequestHeader("Accept", "*/*");
+xhr.setRequestHeader("Cache-Control", "no-cache");
+xhr.setRequestHeader("Postman-Token", "6f5ca16a-e953-434f-a5a4-aba5e2662f77,f110aa5d-aa68-4c39-99e5-ec92db09ba7f");
+xhr.setRequestHeader("Host", "mullenhigh.myschoolapp.com");
+xhr.setRequestHeader("accept-encoding", "gzip, deflate");
+xhr.setRequestHeader("Connection", "keep-alive");
+xhr.setRequestHeader("cache-control", "no-cache");
+
+xhr.send(data);
         } 
     </script>
 </body>
